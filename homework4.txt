@@ -1,0 +1,264 @@
+clear
+help pascalMatrix
+ [matrix] = <strong>pascalMatrix</strong>(n)
+ this function creates a lower triangular 
+ matrix which contains the pascal triangle
+ values in the lower left half of the matrix.
+ the function takes in the maximum row, "n", 
+  which must be a positive integer
+  function returns a matrix (a type of vector)
+
+help findFoodLinear
+  [index] = <strong>findFoodLinear</strong>(L, F)
+  function takes in "L", a matrix of character arrays
+  and "F", a character array, in that specific order
+  L is a unsorted list of foods
+ function performs linear search for "F" in "L" 
+  and returns returns the row index of the match
+  If the item is not found, the function returns 0
+
+help findFoodBinary
+  [index] = findFoodLinear(L, F)
+  function takes in "L", a matrix of character arrays
+  and "F", a character array, in that specific order
+  L is a sorted list of foods
+ function performs binary search for "F" in "L" 
+  and returns returns the row index of the match
+  If the item is not found, the function returns 0
+
+pm = pascalMatrix(1)
+
+pm =
+
+     1     0
+     1     1
+
+pm = pascalMatrix(14)
+
+pm =
+
+  Columns 1 through 6
+
+           1           0           0           0           0           0
+           1           1           0           0           0           0
+           1           2           1           0           0           0
+           1           3           3           1           0           0
+           1           4           6           4           1           0
+           1           5          10          10           5           1
+           1           6          15          20          15           6
+           1           7          21          35          35          21
+           1           8          28          56          70          56
+           1           9          36          84         126         126
+           1          10          45         120         210         252
+           1          11          55         165         330         462
+           1          12          66         220         495         792
+           1          13          78         286         715        1287
+           1          14          91         364        1001        2002
+
+  Columns 7 through 12
+
+           0           0           0           0           0           0
+           0           0           0           0           0           0
+           0           0           0           0           0           0
+           0           0           0           0           0           0
+           0           0           0           0           0           0
+           0           0           0           0           0           0
+           1           0           0           0           0           0
+           7           1           0           0           0           0
+          28           8           1           0           0           0
+          84          36           9           1           0           0
+         210         120          45          10           1           0
+         462         330         165          55          11           1
+         924         792         495         220          66          12
+        1716        1716        1287         715         286          78
+        3003        3432        3003        2002        1001         364
+
+  Columns 13 through 15
+
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           0           0           0
+           1           0           0
+          13           1           0
+          91          14           1
+
+pm(4,1)
+
+ans =
+
+     1
+
+pm(4,2)
+
+ans =
+
+     3
+
+pm(5,2)
+
+ans =
+
+     4
+
+L = '';
+L(1,:) = 'apricot   ';
+L(2,:) = 'avocado   ';
+L(3,:) = 'banana    ';
+L(4,:) = 'blackberry';
+L(5,:) = 'cherry    ';
+a = findFoodLinear(L,'apricot'), b = findFoodBinary(L,'apricot')
+
+a =
+
+     1
+
+
+b =
+
+     1
+
+a = findFoodLinear(L,'cherry'), b = findFoodBinary(L,'cherry')
+
+a =
+
+     5
+
+
+b =
+
+     5
+
+a = findFoodLinear(L,'apple'), b = findFoodBinary(L,'apple')
+
+a =
+
+     0
+
+
+b =
+
+     0
+
+a = findFoodLinear(L,'orange'), b = findFoodBinary(L,'orange')
+
+a =
+
+     0
+
+
+b =
+
+     0
+
+a = findFoodLinear(L,'blueberry'), b = findFoodBinary(L,'blueberry')
+
+a =
+
+     0
+
+
+b =
+
+     0
+
+L(6,:) = 'fig       ';
+L(7,:) = 'grape     ';
+L(8,:) = 'grapefruit';
+L(9,:) = 'kiwi      ';
+L(10,:) = 'lemon     ';
+L(11,:) = 'mango     ';
+L(12,:) = 'pear      ';
+L(13,:) = 'plum      ';
+L(14,:) = 'strawberry';
+L(15,:) = 'watermelon';
+a = findFoodLinear(L,'grape'), b = findFoodBinary(L,'grape')
+
+a =
+
+     7
+
+
+b =
+
+     7
+
+a = findFoodLinear(L,'grapefruit'), b = findFoodBinary(L,'grapefruit')
+
+a =
+
+     8
+
+
+b =
+
+     8
+
+a = findFoodLinear(L,'lemon'), b = findFoodBinary(L,'lemon')
+
+a =
+
+    10
+
+
+b =
+
+    10
+
+a = findFoodLinear(L,'lime'), b = findFoodBinary(L,'lime')
+
+a =
+
+     0
+
+
+b =
+
+     0
+
+a = findFoodLinear(L,'watermelonjuice'), b = findFoodBinary(L,'watermelonjuice')
+
+a =
+
+     0
+
+b = 
+
+     0
+
+L = '';
+L(1,:) = 'grape     ';
+L(2,:) = 'apricot   ';
+L(3,:) = 'strawberry';
+a = findFoodLinear(L,'apricot'), b = findFoodBinary(L,'apricot')
+
+a =
+
+     2
+
+
+b =
+
+     2
+
+a = findFoodLinear(L,'grape'), b = findFoodBinary(L,'grape')
+
+a =
+
+     1
+
+
+b =
+
+     1
+
+%Byron Wong, bw540, 232001450
+diary off
